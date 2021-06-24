@@ -20,8 +20,8 @@ document.getElementById("change_user_button").addEventListener("click", function
   userId = document.getElementById("change_user_text").value;
   //TIP: THE ABOVE LINE IS ASSIGNING THE VALUE IN THE USER ID TEXT BOX TO THE LOCAL VARIABLE userId
   //This is done for every input field
-  // TODO ADD CODE HERE.  Pass the userID variable into the change user method
-
+  // TODO ADD CODE HERE - DONE.  Pass the userID variable into the change user method
+changeUser(userId: string, signature?: string): void
 });
 
 var first = document.getElementById("fn_text");
@@ -35,8 +35,8 @@ first.addEventListener("keyup", function(event){
 document.getElementById("fn_button").addEventListener("click", function(){
   firstName = document.getElementById("fn_text").value;
 
-  // TODO ADD CODE HERE. Pass the firstName variable into the first name set method
-
+  // TODO ADD CODE HERE - DONE. Pass the firstName variable into the first name set method
+setFirstName(firstName: string | null): boolean
 });
 
 var last = document.getElementById("ln_text");
@@ -50,8 +50,8 @@ last.addEventListener("keyup", function(event){
 document.getElementById("ln_button").addEventListener("click", function(){
   lastName = document.getElementById("ln_text").value;
 
-  // TODO ADD CODE HERE. Pass the lastName variable into the last name set method
-
+  // TODO ADD CODE HERE - DONE. Pass the lastName variable into the last name set method
+setLastName(lastName: string | null): boolean
 });
 
 var mail = document.getElementById("email_text");
@@ -65,8 +65,8 @@ mail.addEventListener("keyup", function(event){
 document.getElementById("email_button").addEventListener("click", function(){
   email = document.getElementById("email_text").value;
 
-  // TODO ADD CODE HERE. Pass the email variable into the email set method
-
+  // TODO ADD CODE HERE - DONE. Pass the email variable into the email set method
+setEmail(email: string | null): boolean
 });
 
 //Gender
@@ -74,8 +74,8 @@ document.getElementById("gender_button").addEventListener("click", function(){
   var x = document.getElementById("gender");
   selectedGender = x.options[x.selectedIndex].value;
 
-  // TODO ADD CODE HERE. Pass the selectedGender variable into the gender method
-
+  // TODO ADD CODE HERE - DONE. Pass the selectedGender variable into the gender method
+setGender(gender: Genders | null): boolean
 });
 
 //Birthday
@@ -86,6 +86,7 @@ document.getElementById("birthday_button").addEventListener("click", function(){
   var year = document.getElementById("birthday").value.substring(0,4);
 
   // TODO ADD CODE HERE (FOLLOW THE DOCUMENTATION CLOSELY!)
+  
 });
 
 var countryy = document.getElementById("country_text");
