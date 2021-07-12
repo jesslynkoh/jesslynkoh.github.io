@@ -140,7 +140,7 @@ document.getElementById("attribute_button").addEventListener("click", function()
   attributeName = document.getElementById("attribute_name").value;
   attributeValue = document.getElementById("attribute_value").value;
 
-  // TODO ADD CODE HERE
+  // TODO ADD CODE HERE - DONE.
 appboy.getUser().setCustomUserAttribute(attributeName, attributeValue);
 });
 
@@ -149,7 +149,11 @@ appboy.getUser().setCustomUserAttribute(attributeName, attributeValue);
 document.getElementById("event_button").addEventListener("click", function(){
   eventName = document.getElementById("event_name").value;
   eventProperties = document.getElementById("properties").value;
-  if(eventProperties === "")
+
+// TODO ADD CODE HERE - DONE. 
+appboy.logCustomEvent(eventName);
+
+ /* if(eventProperties === "")
   {
 
     // TODO ADD CODE HERE
@@ -160,7 +164,7 @@ document.getElementById("event_button").addEventListener("click", function(){
 
     // TODO ADD CODE HERE
 
-  }
+  } */
 });
 
 //LOG PURCHASES
