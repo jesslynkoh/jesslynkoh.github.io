@@ -74,8 +74,8 @@ document.getElementById("gender_button").addEventListener("click", function(){
   var x = document.getElementById("gender");
   selectedGender = x.options[x.selectedIndex].value;
 
-  // TODO ADD CODE HERE. Pass the selectedGender variable into the gender method
-
+  // TODO ADD CODE HERE - DONE. Pass the selectedGender variable into the gender method
+appboy.getUser().setGender(selectedGender);
 });
 
 //Birthday
