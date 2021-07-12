@@ -86,7 +86,7 @@ document.getElementById("birthday_button").addEventListener("click", function(){
   var year = document.getElementById("birthday").value.substring(0,4);
 
   // TODO ADD CODE HERE - DONE. (FOLLOW THE DOCUMENTATION CLOSELY!)
-appboy.getUser().setDateOfBirth(month, day, year); 
+appboy.getUser().setDateOfBirth(day, month, year); 
 });
 
 var countryy = document.getElementById("country_text");
@@ -115,8 +115,8 @@ city.addEventListener("keyup", function(event){
 document.getElementById("home_city_button").addEventListener("click", function(){
   homeCity = document.getElementById("home_city_text").value;
 
-  // TODO ADD CODE HERE
-
+  // TODO ADD CODE HERE - DONE.
+appboy.getUser().setHomeCity(homeCity);
 });
 
 var number = document.getElementById("phone_number_text");
@@ -130,8 +130,8 @@ number.addEventListener("keyup", function(event){
 document.getElementById("phone_number_button").addEventListener("click", function(){
   phoneNumber = document.getElementById("phone_number_text").value;
 
-  // TODO ADD CODE HERE
-
+  // TODO ADD CODE HERE - DONE. 
+appboy.getUser().setPhoneNumber(phoneNumber);
 });
 
 //CUSTOM ATTRIBUTES
