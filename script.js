@@ -141,7 +141,7 @@ document.getElementById("attribute_button").addEventListener("click", function()
   attributeValue = document.getElementById("attribute_value").value;
 
   // TODO ADD CODE HERE
-
+appboy.getUser().setCustomUserAttribute(attributeName, attributeValue);
 });
 
 //CUSTOM EVENTS
