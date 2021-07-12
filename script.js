@@ -65,8 +65,8 @@ mail.addEventListener("keyup", function(event){
 document.getElementById("email_button").addEventListener("click", function(){
   email = document.getElementById("email_text").value;
 
-  // TODO ADD CODE HERE. Pass the email variable into the email set method
-
+  // TODO ADD CODE HERE - DONE. Pass the email variable into the email set method
+appboy.getUser().setEmail(email);
 });
 
 //Gender
