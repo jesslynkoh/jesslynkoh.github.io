@@ -35,8 +35,8 @@ first.addEventListener("keyup", function(event){
 document.getElementById("fn_button").addEventListener("click", function(){
   firstName = document.getElementById("fn_text").value;
 
-  // TODO ADD CODE HERE. Pass the firstName variable into the first name set method
-
+  // TODO ADD CODE HERE - DONE. Pass the firstName variable into the first name set method
+appboy.getUser().setFirstName(firstName);
 });
 
 var last = document.getElementById("ln_text");
@@ -50,8 +50,8 @@ last.addEventListener("keyup", function(event){
 document.getElementById("ln_button").addEventListener("click", function(){
   lastName = document.getElementById("ln_text").value;
 
-  // TODO ADD CODE HERE. Pass the lastName variable into the last name set method
-
+  // TODO ADD CODE HERE - DONE. Pass the lastName variable into the last name set method
+appboy.getUser().setLastName(lastName);
 });
 
 var mail = document.getElementById("email_text");
