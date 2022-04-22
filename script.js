@@ -153,7 +153,7 @@ document.getElementById("event_button").addEventListener("click", function () {
     appboy.logCustomEvent(eventName);
   }
   else {
-    appboy.logCustomEvent(eventName, eventProperties);
+    appboy.logCustomEvent(eventName, JSON.parse(eventProperties));
   }
 });
 
