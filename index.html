@@ -1,158 +1,442 @@
-<html>
-	<head>
-		<title>Jessify OKR Project
-		</title>
-		<style>
-			.header {
-				padding: 20px;
-				text-align: center;
-				background: #03b2c9;
-				color: white;
-				font-size: 20px;
-				font-family: Sailec, sans-serif;
-			}
-			p {
-				font-family: Sailec, sans-serif;
-				margin-left: 200px;
-				margin-right:  200px;
-			}
-			h3 {
-				font-family: Sailec, sans-serif;
-				margin-left: 200px;
-				margin-right:  200px;
-			}
-			hr {
-				margin-left: 200px;
-				margin-right:  200px;
-			}
-		</style>
-		<script type="text/javascript">
-			/**
-		  +function(a,p,P,b,y){a.braze={};a.brazeQueue=[];for(var s="BrazeSdkMetadata DeviceProperties Card Card.prototype.dismissCard Card.prototype.removeAllSubscriptions Card.prototype.removeSubscription Card.prototype.subscribeToClickedEvent Card.prototype.subscribeToDismissedEvent Card.fromContentCardsJson Banner CaptionedImage ClassicCard ControlCard ContentCards ContentCards.prototype.getUnviewedCardCount Feed Feed.prototype.getUnreadCardCount ControlMessage InAppMessage InAppMessage.SlideFrom InAppMessage.ClickAction InAppMessage.DismissType InAppMessage.OpenTarget InAppMessage.ImageStyle InAppMessage.Orientation InAppMessage.TextAlignment InAppMessage.CropType InAppMessage.prototype.closeMessage InAppMessage.prototype.removeAllSubscriptions InAppMessage.prototype.removeSubscription InAppMessage.prototype.subscribeToClickedEvent InAppMessage.prototype.subscribeToDismissedEvent InAppMessage.fromJson FullScreenMessage ModalMessage HtmlMessage SlideUpMessage User User.Genders User.NotificationSubscriptionTypes User.prototype.addAlias User.prototype.addToCustomAttributeArray User.prototype.addToSubscriptionGroup User.prototype.getUserId User.prototype.incrementCustomUserAttribute User.prototype.removeFromCustomAttributeArray User.prototype.removeFromSubscriptionGroup User.prototype.setCountry User.prototype.setCustomLocationAttribute User.prototype.setCustomUserAttribute User.prototype.setDateOfBirth User.prototype.setEmail User.prototype.setEmailNotificationSubscriptionType User.prototype.setFirstName User.prototype.setGender User.prototype.setHomeCity User.prototype.setLanguage User.prototype.setLastKnownLocation User.prototype.setLastName User.prototype.setPhoneNumber User.prototype.setPushNotificationSubscriptionType InAppMessageButton InAppMessageButton.prototype.removeAllSubscriptions InAppMessageButton.prototype.removeSubscription InAppMessageButton.prototype.subscribeToClickedEvent automaticallyShowInAppMessages destroyFeed hideContentCards showContentCards showFeed showInAppMessage toggleContentCards toggleFeed changeUser destroy getDeviceId initialize isPushBlocked isPushPermissionGranted isPushSupported logCardClick logCardDismissal logCardImpressions logContentCardImpressions logContentCardsDisplayed logCustomEvent logFeedDisplayed logInAppMessageButtonClick logInAppMessageClick logInAppMessageHtmlClick logInAppMessageImpression logPurchase openSession requestPushPermission removeAllSubscriptions removeSubscription requestContentCardsRefresh requestFeedRefresh requestImmediateDataFlush enableSDK isDisabled setLogger setSdkAuthenticationSignature addSdkMetadata disableSDK subscribeToContentCardsUpdates subscribeToFeedUpdates subscribeToInAppMessage subscribeToSdkAuthenticationFailures toggleLogging unregisterPush wipeData handleBrazeAction".split(" "),i=0;i<s.length;i++){for(var m=s[i],k=a.braze,l=m.split("."),j=0;j<l.length-1;j++)k=k[l[j]];k[l[j]]=(new Function("return function "+m.replace(/\./g,"_")+"(){window.brazeQueue.push(arguments); return true}"))()}window.braze.getCachedContentCards=function(){return new window.braze.ContentCards};window.braze.getCachedFeed=function(){return new window.braze.Feed};window.braze.getUser=function(){return new window.braze.User};(y=p.createElement(P)).type='text/javascript';
-		    y.src='https://js.appboycdn.com/web-sdk/4.2/braze.min.js';
-		    y.async=1;(b=p.getElementsByTagName(P)[0]).parentNode.insertBefore(y,b)
-		  }(window,document,'script');
+<!DOCTYPE html>
+<html lang="en">
 
-		  	// initialize the SDK
-			braze.initialize('0a278d37-4e4d-4219-8c8c-903c0dafcf0f', {
-			    baseUrl: "sdk.iad-03.braze.com",
-			    enableLogging: true,
-			    sessionTimeoutInSeconds: 900
-			});
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <title>Sethboy</title>
+  <style>
+    body {
+      background-color: powderblue;
+    }
 
-			// optionally show all in-app messages without custom handling
-			braze.automaticallyShowInAppMessages();
+    .specialButton {
+      background-color: green;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
 
-			// if you use Content Cards
-			braze.subscribeToContentCardsUpdates(function(cards){
-			    // cards have been updated
-			});
+    /*  h1
+  {
+      -webkit-animation: color-change 1s infinite;
+      -moz-animation: color-change 1s infinite;
+      -o-animation: color-change 1s infinite;
+      -ms-animation: color-change 1s infinite;
+      animation: color-change 1s infinite;
+  }*/
 
-			// optionally set the current user's External ID
-			if (isLoggedIn){
-			    braze.changeUser(userIdentifier);
-			}
+    @-webkit-keyframes color-change {
+      0% {
+        color: red;
+      }
 
-			// Be sure to call `openSession` after `automaticallyShowInAppMessages`
-			braze.openSession();
+      20% {
+        color: blue;
+      }
 
-			// Push Registration
-			braze.requestPushPermission();
-		**/
+      40% {
+        color: yellow;
+      }
 
-		//configure the SDK
-		  window.mParticle = {
-		      config: {
-		          isDevelopmentMode: true,
-		          /**
-		          identifyRequest: {
-		              userIdentities: {
-		                  email: 'joannamae.abrea@braze.com',
-		                  customerid: '12345',
-		              },
-		          },
-		          **/
-		          identityCallback: function(result) {
-		            // Do something once an identity call has been made.
-		            // For more information, see https://docs.mparticle.com/developers/sdk/web/idsync/#sdk-initialization-and-identify
-		            if (result.getUser()) {
-		            	console.log(result);
-		        	}
-		          },
-		          dataPlan: {
-		            planId: 'jesslyn_web_sdk_okr'
-		          }
-		      },
-		  };
+      60% {
+        color: orange;
+      }
 
-		  //load the SDK
-		//  (
-		//  function(t){window.mParticle=window.mParticle||{};window.mParticle.EventType={Unknown:0,Navigation:1,Location:2,Search:3,Transaction:4,UserContent:5,UserPreference:6,Social:7,Other:8};window.mParticle.eCommerce={Cart:{}};window.mParticle.Identity={};window.mParticle.config=window.mParticle.config||{};window.mParticle.config.rq=[];window.mParticle.config.snippetVersion=2.3;window.mParticle.ready=function(t){window.mParticle.config.rq.push(t)};var e=["endSession","logError","logBaseEvent","logEvent","logForm","logLink","logPageView","setSessionAttribute","setAppName","setAppVersion","setOptOut","setPosition","startNewSession","startTrackingLocation","stopTrackingLocation"];var o=["setCurrencyCode","logCheckout"];var i=["identify","login","logout","modify"];e.forEach(function(t){window.mParticle[t]=n(t)});o.forEach(function(t){window.mParticle.eCommerce[t]=n(t,"eCommerce")});i.forEach(function(t){window.mParticle.Identity[t]=n(t,"Identity")});function n(e,o){return function(){if(o){e=o+"."+e}var t=Array.prototype.slice.call(arguments);t.unshift(e);window.mParticle.config.rq.push(t)}}var dpId,dpV,config=window.mParticle.config,env=config.isDevelopmentMode?1:0,dbUrl="?env="+env,dataPlan=window.mParticle.config.dataPlan;dataPlan&&(dpId=dataPlan.planId,dpV=dataPlan.planVersion,dpId&&(dpV&&(dpV<1||dpV>1e3)&&(dpV=null),dbUrl+="&plan_id="+dpId+(dpV?"&plan_version="+dpV:"")));var mp=document.createElement("script");mp.type="text/javascript";mp.async=true;mp.src=("https:"==document.location.protocol?"https://jssdkcdns":"http://jssdkcdn")+".mparticle.com/js/v2/"+t+"/mparticle.js" + dbUrl;var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(mp,c)}
-		//  )("12a01011d7803b4a832c68f3b52d243a");
+      80% {
+        color: green;
+      }
 
-		(
-      function(e){window.mParticle=window.mParticle||{};window.mParticle.EventType={Unknown:0,Navigation:1,Location:2,Search:3,Transaction:4,UserContent:5,UserPreference:6,Social:7,Other:8};window.mParticle.eCommerce={Cart:{}};window.mParticle.Identity={};window.mParticle.config=window.mParticle.config||{};window.mParticle.config.rq=[];window.mParticle.config.snippetVersion=2.3;window.mParticle.ready=function(e){window.mParticle.config.rq.push(e)};var i=["endSession","logError","logBaseEvent","logEvent","logForm","logLink","logPageView","setSessionAttribute","setAppName","setAppVersion","setOptOut","setPosition","startNewSession","startTrackingLocation","stopTrackingLocation"];var n=["setCurrencyCode","logCheckout"];var t=["identify","login","logout","modify"];i.forEach(function(e){window.mParticle[e]=o(e)});n.forEach(function(e){window.mParticle.eCommerce[e]=o(e,"eCommerce")});t.forEach(function(e){window.mParticle.Identity[e]=o(e,"Identity")});function o(i,n){return function(){if(n){i=n+"."+i}var e=Array.prototype.slice.call(arguments);e.unshift(i);window.mParticle.config.rq.push(e)}}var r,c,a=window.mParticle.config,s=a.isDevelopmentMode?1:0,l="?env="+s,w=window.mParticle.config.dataPlan;if(w){r=w.planId;c=w.planVersion;if(r){if(c&&(c<1||c>1e3)){c=null}l+="&plan_id="+r+(c?"&plan_version="+c:"")}}var d=window.mParticle.config.versions;var m=[];if(d){Object.keys(d).forEach(function(e){m.push(e+"="+d[e])})}var f=document.createElement("script");f.type="text/javascript";f.async=true;f.src=("https:"==document.location.protocol?"https://jssdkcdns":"http://jssdkcdn")+".mparticle.com/js/v2/"+e+"/mparticle.js"+l+"&"+m.join("&");var p=document.getElementsByTagName("script")[0];p.parentNode.insertBefore(f,p)}
-      )("12a01011d7803b4a832c68f3b52d243a");
+      100% {
+        color: red;
+      }
+    }
 
-      window.mParticle.ready(
-        function() { 
-          console.log('mParticle has loaded!'); 
-           // window.mParticle.logEvent(
-           // 'Video Watched',
-           // 1,
-           // {'category':'Destination Intro','title':'Paris'}
-         // );
+    @-moz-keyframes color-change {
+      0% {
+        color: red;
+      }
 
-          // !! Note: do not attempt to access the user object at this point
-          // !! var user = window.mParticle.Identity.getCurrentUser();
-          // !! Instead, access the user object via the mParticle.config.identityCallback option
-        }
-      );
+      20% {
+        color: blue;
+      }
+
+      40% {
+        color: yellow;
+      }
+
+      60% {
+        color: orange;
+      }
+
+      80% {
+        color: green;
+      }
+
+      100% {
+        color: red;
+      }
+    }
+
+    @-ms-keyframes color-change {
+      0% {
+        color: red;
+      }
+
+      20% {
+        color: blue;
+      }
+
+      40% {
+        color: yellow;
+      }
+
+      60% {
+        color: orange;
+      }
+
+      80% {
+        color: green;
+      }
+
+      100% {
+        color: red;
+      }
+    }
+
+    @-o-keyframes color-change {
+      0% {
+        color: red;
+      }
+
+      20% {
+        color: blue;
+      }
+
+      40% {
+        color: yellow;
+      }
+
+      60% {
+        color: orange;
+      }
+
+      80% {
+        color: green;
+      }
+
+      100% {
+        color: red;
+      }
+    }
+
+    @keyframes color-change {
+      0% {
+        color: red;
+      }
+
+      20% {
+        color: blue;
+      }
+
+      40% {
+        color: yellow;
+      }
+
+      60% {
+        color: orange;
+      }
+
+      80% {
+        color: green;
+      }
+
+      100% {
+        color: red;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="custom.css" />
+  <!-- You'll want to add the Appboy SDK here -->
+  <script type="text/javascript">
+    +function (a, p, P, b, y) {
+      a.appboy = {}; a.appboyQueue = []; for (var s = "DeviceProperties Card Card.prototype.dismissCard Card.prototype.removeAllSubscriptions Card.prototype.removeSubscription Card.prototype.subscribeToClickedEvent Card.prototype.subscribeToDismissedEvent Banner CaptionedImage ClassicCard ControlCard ContentCards ContentCards.prototype.getUnviewedCardCount Feed Feed.prototype.getUnreadCardCount ControlMessage InAppMessage InAppMessage.SlideFrom InAppMessage.ClickAction InAppMessage.DismissType InAppMessage.OpenTarget InAppMessage.ImageStyle InAppMessage.Orientation InAppMessage.TextAlignment InAppMessage.CropType InAppMessage.prototype.closeMessage InAppMessage.prototype.removeAllSubscriptions InAppMessage.prototype.removeSubscription InAppMessage.prototype.subscribeToClickedEvent InAppMessage.prototype.subscribeToDismissedEvent FullScreenMessage ModalMessage HtmlMessage SlideUpMessage User User.Genders User.NotificationSubscriptionTypes User.prototype.addAlias User.prototype.addToCustomAttributeArray User.prototype.getUserId User.prototype.incrementCustomUserAttribute User.prototype.removeFromCustomAttributeArray User.prototype.setAvatarImageUrl User.prototype.setCountry User.prototype.setCustomLocationAttribute User.prototype.setCustomUserAttribute User.prototype.setDateOfBirth User.prototype.setEmail User.prototype.setEmailNotificationSubscriptionType User.prototype.setFirstName User.prototype.setGender User.prototype.setHomeCity User.prototype.setLanguage User.prototype.setLastKnownLocation User.prototype.setLastName User.prototype.setPhoneNumber User.prototype.setPushNotificationSubscriptionType InAppMessageButton InAppMessageButton.prototype.removeAllSubscriptions InAppMessageButton.prototype.removeSubscription InAppMessageButton.prototype.subscribeToClickedEvent display display.automaticallyShowNewInAppMessages display.destroyFeed display.hideContentCards display.showContentCards display.showFeed display.showInAppMessage display.toggleContentCards display.toggleFeed changeUser destroy getDeviceId initialize isPushBlocked isPushGranted isPushPermissionGranted isPushSupported logCardClick logCardDismissal logCardImpressions logContentCardsDisplayed logCustomEvent logFeedDisplayed logInAppMessageButtonClick logInAppMessageClick logInAppMessageHtmlClick logInAppMessageImpression logPurchase openSession registerAppboyPushMessages removeAllSubscriptions removeSubscription requestContentCardsRefresh requestFeedRefresh requestImmediateDataFlush resumeWebTracking setLogger setSdkAuthenticationSignature stopWebTracking subscribeToContentCardsUpdates subscribeToFeedUpdates subscribeToInAppMessage subscribeToNewInAppMessages subscribeToSdkAuthenticationFailures toggleAppboyLogging trackLocation unregisterAppboyPushMessages wipeData".split(" "), i = 0; i < s.length; i++) { for (var m = s[i], k = a.appboy, l = m.split("."), j = 0; j < l.length - 1; j++)k = k[l[j]]; k[l[j]] = (new Function("return function " + m.replace(/\./g, "_") + "(){window.appboyQueue.push(arguments); return true}"))() } window.appboy.getCachedContentCards = function () { return new window.appboy.ContentCards }; window.appboy.getCachedFeed = function () { return new window.appboy.Feed }; window.appboy.getUser = function () { return new window.appboy.User }; (y = p.createElement(P)).type = 'text/javascript';
+      y.src = 'https://js.appboycdn.com/web-sdk/3.3/appboy.min.js';
+      y.async = 1; (b = p.getElementsByTagName(P)[0]).parentNode.insertBefore(y, b)
+    }(window, document, 'script');
+
+    appboy.initialize('aa0ac7ec-691b-4d54-8342-eaced73e531b', { baseUrl: 'sondheim.braze.com', allowUserSuppliedJavascript: true, enableLogging: true });
+    appboy.display.automaticallyShowNewInAppMessages();
+
+    /*
+     * If you have a unique identifier for this user (e.g. they are logged into your site) it's a good idea to call
+     * changeUser here.
+     * See https://js.appboycdn.com/web-sdk/3.3/doc/modules/appboy.html#changeuser for more information.
+     */
+    // appboy.changeUser(userIdentifier);
+
+    appboy.openSession();
+  </script>
+</head>
+
+<body>
+
+  <h1>Jesslyn's Site</h1>
+  <h3>Web SDK Integration_Q2FY22</h3>
+
+  <br />
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Read Me!
+  </button>
+
+  <br />
+  <br />
+
+  <a href="https://js.appboycdn.com/web-sdk/latest/doc/module-appboy.html" target="_blank">Link to Web SDK Documentation
+    (Main Class Methods)</a>
+
+  <br />
+  <br />
+
+  <a href="https://js.appboycdn.com/web-sdk/latest/doc/ab.User.html" target="_blank">Link to Web SDK Documentation
+    (getUser() Subclass Methods)</a>
+
+  <br />
+  <br />
+
+  <a href="https://sweeney.braze.com/users/user_search/5cf92ce4fbe76a0c3c861e6a" target="_blank">Link to Braze
+    Dashboard</a>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Hey There!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Welcome to my Braze Web SDK Integration Tutorial.
+          <br />
+          <br />
+          –Get started by integrating methods into the JavaScript file in this folder titled script.js (PAY CLOSE
+          ATTENTION TO THE COMMENTS).
+          <br />
+          <br />
+          -If you get stuck, there is an answer key file in the folder.
+          <br />
+          <br />
+          –The documentation for the methods, as well as the real-time user search dashboard, are linked on this page.
+          <br />
+          <br />
+          –When using the actual HTML site, make sure to submit a User ID (inside user attributes) before you do
+          anything else!
 
 
-		</script>
-	</head>
-	<body>
-		<div class="header">
-			<p>
-				<h1>Jessify</h1>
-				Braze Web SDK integration with mParticle
-			</p>
-		</div>
-		<div class="body">
-			<br/ >
-			<center>
-				<a style="font-family:Sailec" href="https://internal-dashboard-03.braze.com/app_settings/app_settings/61d5576bf8a0bc162e5d076d?appId=668ec3c4b0e8130059c4ee7c&locale=en" target="_blank">Dashboard</a>
-			</center>
-			<br />
-			<div id="user">
-				<p><h3>Session Settings</h3></p>
-				<p><label>User ID:</label></p>
-				<p>
-					<input type="text" id="change_userid"/>
-					<button id="submit_userid">Change User</button>
-				</p>
-			</div>
-			<br />
-			<hr>
-			<div id="customEventLog">
-				<p><h3>Attributes & Events</h3></p>
-				<p><label>Custom Event: </label></p>
-				<p>
-					<input type="text" id="add_customevent" placeholder="Custom Event Name" />
-					<button id="submit_customevent">Add Custom Event</button>
-				</p>
-				<p><label>Custom Attributes: </label></p>
-				<p>
-					<input type="text" id="custom_attribute_name" placeholder="Custom Attribute Name" />
-					<input type="text" id="custom_attribute_value" placeholder="Custom Attribute Value" />
-					<button id="submit_customattribute">Add Custom Attribute</button>
-				</p>
-			</div>
-			<br />
-			<script type="text/javascript" src="app.js"></script>
-		</div>
-	</body>
-	<footer>
-	</footer>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <br />
+
+  <button class="specialButton" onclick="user()">Set User Attributes</button>
+  <br />
+  <br />
+
+  <div id="user" style="display:none">
+
+    User ID:
+    <input id="change_user_text" type="text" name="userid">
+    <button id="change_user_button">Submit</button><br />
+    <br />
+
+    First Name:
+    <input id="fn_text" type="text" name="firstname">
+    <button id="fn_button">Submit</button><br />
+    <br />
+
+    Last Name:
+    <input id="ln_text" type="text" name="lastname">
+    <button id="ln_button">Submit</button><br />
+    <br />
+
+    Email Address:
+    <input id="email_text" type="email" name="emailaddress">
+    <button id="email_button">Submit</button><br />
+    <br />
+
+    Gender:
+    <select id="gender" name="gender">
+      <option value="m">Male</option>
+      <option value="f">Female</option>
+      <option value="o">Other</option>
+      <option value="u">Unknown</option>
+      <option value="n">Not Applicable</option>
+      <option value="p">Prefer Not to Answer</option>
+    </select>
+    <button id="gender_button">Submit</button><br />
+    <br />
+
+    Birthday:
+    <input id="birthday" type="date" name="birthday">
+    <button id="birthday_button">Submit</button><br />
+    <br />
+
+    Country:
+    <input id="country_text" type="text" name="country">
+    <button id="country_button">Submit</button><br />
+    <br />
+
+    Home City:
+    <input id="home_city_text" type="text" name="homecity">
+    <button id="home_city_button">Submit</button><br />
+    <br />
+
+    Phone Number:
+    <input id="phone_number_text" type="text" name="phonenumber">
+    <button id="phone_number_button">Submit</button><br />
+    <br />
+
+  </div>
+
+  <button class="specialButton" onclick="customA()">Set Custom Attributes</button>
+  <br />
+  <br />
+
+  <div id="customA" style="display:none">
+
+    Attribute Name:
+    <input id="attribute_name" type="text" name="attributename"><br />
+    <br />
+
+    Attribute Value:
+    <input id="attribute_value" type="text" name="attributevalue"><br />
+    <br />
+
+    <button id="attribute_button">Submit</button><br />
+    <br />
+
+  </div>
+
+  <button class="specialButton" onclick="customE()">Log Custom Events</button>
+  <br />
+  <br />
+
+  <div id="customE" style="display:none">
+
+    Event Name:
+    <input id="event_name" type="text" name="eventname"><br />
+    <br />
+
+    [Optional] Event Properties (JSON):
+    <input id="properties" type="text" name="optionaleventproperties"><br />
+    <br />
+
+    <button id="event_button">Submit</button><br />
+    <br />
+
+  </div>
+
+  <button class="specialButton" onclick="purchases()">Log Purchases</button>
+  <br />
+
+  <div id="purchases" style="display:none">
+
+    <br />
+    Product ID:
+    <input id="product_id" type="text" name="productid"><br />
+    <br />
+
+    [Optional] Currency:
+    <input id="currency" type="text" name="currency"><br />
+    <br />
+
+    Price:
+    <input id="price" type="number" name="price"><br />
+    <br />
+
+    [Optional] Quantity:
+    <input id="quantity" type="number" name="quantity"><br />
+    <br />
+
+    <button id="log_purchase_button">Submit</button><br />
+    <br />
+
+  </div>
+
+  <!--
+<h2 style="color:green;">Push</h2>
+
+  <button id="register">Register for Push</button>
+  <button id="unregister">Unregister for Push</button>
+  <br />
+  <br />
+ -->
+
+  <br />
+  <button id="test_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal">
+    Test It!
+  </button>
+
+  <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="testModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="testModalLabel">User Attribute Results</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h2 id="answer"></h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+<script type="text/javascript" src="script.js"></script>
+<script>
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
+</script>
+
 </html>
